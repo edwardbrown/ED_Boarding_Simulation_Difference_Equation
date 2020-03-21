@@ -2,6 +2,8 @@
 # using 2 years of data from our level 1 trauma academic medical center. They will not work out of the
 # box for your institution.
 # 2019-2020 Edward G. Brown MS, Patricia K. Howard PhD RN, Daniel Moore MD
+# For more information please read the paper SIMULATING EMERGENCY DEPARTMENT BOARDING USING A DIFFERENCE EQUATION 
+# at https://doi.org/10.1101/2020.03.19.20039040
 
 bfunc <- function() {
 
