@@ -28,18 +28,15 @@ bfunc <- function() {
   
   for (i in 1:days)
     xbar.rand[[i]] <-sample(lower:upper, 1)
-  head(xbar.rand)
-  
+    
   for (i in 1:days)
     xbar.start[[i]] <-ceiling(start_int + (xbar.rand[[i]] * start_slope))
 
-  head(xbar.start)
-
-  for (i in 1:days)
+    for (i in 1:days)
     xbar.stop[[i]] <- ceiling(stop_int +(xbar.start[[i]] * stop_slope))
   
-  head(xbar.stop)
-
+# Why 12? In our observed data, the starting day balance of a day (selected at random) was 12. This starts our iteration.
+# Patients boarding at Start of Day was 25, Patients start boarding during the day was 57, Patients stop boarding was 70.  
   xbar.star[[1]] = 12
   
   for (i in 1:days)
