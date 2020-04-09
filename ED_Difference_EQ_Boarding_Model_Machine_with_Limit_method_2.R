@@ -108,7 +108,7 @@ abline(v=quantile(bresults, 0.975),col="blue", lwd=2)
 # }
 # 
 # # returns the achieved CL and upper/lower bounds
-# cls <- GetCI(bresults,0.99) 
+# cls <- GetCI(bresults,0.95) 
 # cls
 # 
 # hist(bresults, col="lightgreen")
