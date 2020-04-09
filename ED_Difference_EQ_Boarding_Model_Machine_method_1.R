@@ -67,6 +67,7 @@ quantile(bresults, 0.975)
 hist(bresults, col="lightgreen")
 abline(v=quantile(bresults, 0.025),col="blue", lwd=2)
 abline(v=quantile(bresults, 0.975),col="blue", lwd=2)
+abline(v=median(bresults),col="red", lwd=2)
 
 # Uncomment the section below for a non-parametric CI around the median.
 # The function will output the achieved CL.
