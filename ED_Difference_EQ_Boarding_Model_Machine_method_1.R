@@ -59,8 +59,28 @@ for (i in 1:reps)
 
 sd(bresults)
 summary(bresults)
-hist(bresults)
+
+# percentile method for 95% CI
 quantile(bresults, 0.025)
 quantile(bresults, 0.975)
+
+hist(bresults, col="lightgreen")
+abline(v=quantile(bresults, 0.025),col="blue", lwd=2)
+abline(v=quantile(bresults, 0.975),col="blue", lwd=2)
+
+# this method may work better for non-normal data
+sortedbr <- sort(bresults)
+sortedbru <- sortedbr[!duplicated(sortedbr)]
+head(sortedbru)
+n <- length(sortedbru)
+j <- round((0.50*n) - ((1.96*sqrt(n))*0.50))
+k <- round(((0.50*n)+1) + ((1.96*sqrt(n))*0.50))
+
+lower <- sortedbru[j]
+upper <- sortedbru[k]
+
+hist(bresults, col="lightgreen")
+abline(v=lower,col="blue", lwd=2)
+abline(v=upper,col="blue", lwd=2)
 
 
