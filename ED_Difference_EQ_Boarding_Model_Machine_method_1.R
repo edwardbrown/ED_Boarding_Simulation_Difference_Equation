@@ -69,41 +69,9 @@ abline(v=quantile(bresults, 0.025),col="blue", lwd=2)
 abline(v=quantile(bresults, 0.975),col="blue", lwd=2)
 abline(v=median(bresults),col="red", lwd=2)
 
-# Uncomment the section below for a non-parametric CI around the median.
+# For a non-parametric CI around the median please see this repository:
+# https://github.com/edwardbrown/Median_Confidence_Interval
 # The function will output the achieved CL.
 # Note: Numerous ties (especially around the median) may lead to an exceedingly narrow CI.
 # This will likely occur more/less depending on the function arguments used and number of bootstrap replications.
 # Your results may vary.
-
-# GetCI <- function(v, clevel){
-#   
-#   v <- sort(v)
-#   n <- length(v)
-#   cl <- 0
-#   prod <- (n+1)*(0.50)
-#   Lstar <- floor(prod - 1)
-#   Ustar <- floor(prod + 1)
-#   
-#   while (cl < clevel ) { 
-#     
-#     l <- pbinom(Lstar,length(v),prob=0.5)
-#     u <- pbinom(Ustar,length(v),prob=0.5)
-#     cl <- u - l 
-#     
-#     Lstar <- Lstar - 1
-#     Ustar <- Ustar + 1
-#     
-#   }
-#   
-#   return(list(cl, v[Lstar], v[Ustar] ))
-# }
-# 
-# # returns the achieved CL and upper/lower bounds
-# cls <- GetCI(bresults,0.95) 
-# cls
-# 
-# hist(bresults, col="lightgreen")
-# abline(v=cls[2],col="blue", lwd=2)
-# abline(v=cls[3],col="blue", lwd=2)
-# abline(v=median(bresults),col="red", lwd=2)
-
